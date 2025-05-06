@@ -1,0 +1,60 @@
+CinemaController.php ? ou FilmCOntroller.php ?
+
+<?php
+$film = $film ?? []; // pour éviter d'autres erreurs si $film n'existe pas
+
+if ($film):
+?>
+    <h1><?= $film['titre'] ?></h1>
+    <p><strong>Année :</strong> <?= $film['annee_sortie'] ?></p>
+    <p><strong>Durée :</strong> <?= $film['duree'] ?> min</p>
+    <p><strong>Synopsis :</strong> <?= $film['synopsis'] ?></p>
+    <p><strong>Note :</strong> <?= $film['note'] ?>/5</p>
+    <?php if (!empty($film['affiche'])): ?>
+        <img src="public/img/<?= $film['affiche'] ?>" alt="Affiche du film" width="200">
+    <?php endif; ?>
+<?php
+else:
+    echo "<p>Film non trouvé.</p>";
+endif;
+?>
+J'ai enlevé de listFim.php <img src="<?= htmlspecialchars($film["affiche"]) ?>" width="80">
+
+detailFilm.php
+
+<h1>Détail du film</h1>
+
+<?php if ($film): ?>
+    <h2><?= htmlspecialchars($film["title"]) ?></h2>
+
+    <p><strong>Durée :</strong> <?= htmlspecialchars($film["duree"]) ?> minutes</p>
+    
+    <p><strong>Année de sortie :</strong> <?= htmlspecialchars($film["anneeSortie"]) ?></p>
+    
+    <p><strong>Note :</strong> <?= htmlspecialchars($film["note"]) ?>/10</p>
+    
+    <p><strong>Réalisateur :</strong> <?= htmlspecialchars($film["prenom_realisateur"]) ?> <?= htmlspecialchars($film["nom_realisateur"]) ?></p>
+
+    <?php else: ?>
+    <p>Film introuvable.</p>
+
+    <?php endif; ?>
+css bouton retour à l'accueil
+
+.btn-retour {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: rgb(197, 229, 41); /* même couleur que tes boutons */
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-retour:hover {
+  background-color: #ffb700;
+  transform: scale(1.05);
+}

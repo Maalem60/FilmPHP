@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(53, 49, 171); /* Fond bleu */
+  color: black; /* Texte général en noir pour plus de lisibilité */
+  background-image: url('public/img/<?= htmlspecialchars($film["affiche"]) ?>');
+  background-size: cover;  /* L'image couvre tout l'écran sans déformation */
+  background-position: center;  /* Centrer l'image */
+  background-attachment: fixed;  /* Fixer l'image en arrière-plan même lors du scroll */
+  height: 100vh;  /* Prendre toute la hauteur de l'écran */
+  margin: 0;  /* Éliminer les marges par défaut */
+}
+h1, h2, p {
+    color: white;  /* Texte en blanc */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  /* Ombre portée pour le texte */
+}
+
+/* Titres */
+h1.uk-heading-divider {
+  color:rgb(200, 186, 186); /* Blanc pour le titre principal */
+  font-size: 2em;
+}
+
+h2.uk-heading-bullet {
+  color: #ffcc00; /* Jaune pour le sous-titre */
+  font-size: 1.5em;
+}
+
+/* Navigation */
+.uk-navbar-container {
+  background-color: #00509e; /* Bleu foncé pour la barre de navigation */
+}
+
+.uk-navbar-item {
+  color:rgb(23, 22, 22); /* Texte blanc dans la barre de navigation */
+}
+
+.uk-navbar-item:hover {
+  color: #ffcc00; /* Jaune au survol des éléments */
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  color: rgb(41, 229, 126); /* Texte vert clair */
+  padding: 10px 20px;
+  gap: 20px;
+  text-align: center;
+}
+
+.icone-h1 {
+  width: 40px;
+  height: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2em;
+  flex-grow: 1;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Navigation secondaire */
+.nav a {
+  color: rgb(41, 229, 126); /* Vert clair pour les liens */
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Layout */
+.main-container {
+  display: flex;
+  padding: 20px;
+  align-items: stretch;
+  gap: 20px;
+  flex-grow: 1;
+  margin-bottom: 0;
+  height: calc(100vh - 100px); /* Ajuste la hauteur */
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-right: 10px;
+  height: 600px;
+}
+
+ button {
+  flex-grow: 1;
+  padding: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: rgb(197, 229, 41); /* Jaune/vert */
+  border: none;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+ button:hover {
+  background-color: #ffb700; /* Jaune-orangé au survol */
+  transform: scale(1.05);
+}
+
+/* Affiches */
+.affiche {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  border-radius: 10px;
+}
+
+/* Grid pour le contenu */
+content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 600px);
+  gap: 5px;
+  justify-items: center;
+  align-items: center;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(11, 11, 11); /* Fond noir */
+  font-size: 0.9em;
+  color: rgb(41, 229, 126); /* Texte vert clair */
+}
